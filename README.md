@@ -1,11 +1,17 @@
 🚀 MySQL Simple Node.js API
 
-A simple full-stack backend starter using Node.js, Express, and MySQL.
-Perfect for beginners learning CRUD operations and database integration.
+«Simple backend starter using Node.js, Express, and MySQL (CRUD ready)»
 
 ---
 
-📦 Tech Stack
+📌 Overview
+
+This project is a minimal REST API built with Node.js and MySQL.
+It is designed for beginners to understand how backend, database, and API work together.
+
+---
+
+🧰 Tech Stack
 
 - Node.js
 - Express
@@ -32,9 +38,9 @@ mysql-simple-repo/
 🗄️ Database Setup
 
 1. Open MySQL
-2. Run the SQL file:
+2. Import schema file:
 
-db/schema.sql
+source db/schema.sql;
 
 This will:
 
@@ -52,11 +58,11 @@ npm install
 
 ---
 
-▶️ Run Server
+▶️ Run the App
 
 node server.js
 
-Server will start on:
+Server will run on:
 
 http://localhost:3000
 
@@ -64,25 +70,9 @@ http://localhost:3000
 
 📡 API Endpoints
 
-🔹 Get all users
-
 GET /users
 
-🔹 Create new user
-
-POST /users
-
-Body (JSON):
-
-{
-  "name": "John",
-  "email": "john@example.com",
-  "password": "123456"
-}
-
----
-
-🧪 Example Response
+Get all users
 
 [
   {
@@ -94,29 +84,51 @@ Body (JSON):
 
 ---
 
-⚠️ Notes
+POST /users
 
-- Change MySQL credentials in "config/db.js"
-- Do NOT use plain passwords in production (use hashing like bcrypt)
+Create a new user
+
+Request Body:
+
+{
+  "name": "John",
+  "email": "john@example.com",
+  "password": "123456"
+}
+
+Response:
+
+{
+  "message": "User added",
+  "id": 2
+}
 
 ---
 
-📌 Future Improvements
+⚠️ Important Notes
 
-- Authentication (JWT)
-- MVC structure
-- Validation
-- Error handling
-- Frontend integration
+- Update MySQL credentials in "config/db.js"
+- Never store plain passwords in production
+- Use environment variables for sensitive data
+
+---
+
+🚀 Future Improvements
+
+- JWT Authentication
+- MVC Architecture
+- Input validation
+- Error handling middleware
+- Docker support
 
 ---
 
 🤝 Contributing
 
-Pull requests are welcome!
+Feel free to fork this repo and submit pull requests.
 
 ---
 
 📄 License
 
-MIT
+MIT License
